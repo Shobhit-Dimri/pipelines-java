@@ -20,3 +20,18 @@ steps:
     publishJUnitResults: true
     testResultsFiles: '**/surefire-reports/TEST-*.xml'
     goals: 'package'
+    
+- task: ArtifactoryGenericUpload@2
+  inputs:
+    artifactoryService: 'BasicAuth-artifactory'
+    specSource: 'taskConfiguration'
+    fileSpec: |
+      {
+        "files": [
+          {
+            "pattern": "*.jar",
+            "target": "uploadordownload-generic-local/upload/"
+          }
+        ]
+      }
+    failNoOp: true
