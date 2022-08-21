@@ -30,7 +30,7 @@ steps:
         "files": [
           {
             "pattern": "*.jar",
-            "target": "uploadordownload-generic-local/upload/"
+            "target": "azdevopsshobz-generic-local/upload/"
           }
         ]
       }
