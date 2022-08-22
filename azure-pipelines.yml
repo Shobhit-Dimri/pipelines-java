@@ -35,3 +35,19 @@ steps:
         ]
       }
     failNoOp: true
+    
+- task: ArtifactoryGenericDownload@3
+  inputs:
+#       connection: 'BasicAuth-artifactory'
+    artifactoryService: 'JFrogArtifactory'
+    specSource: 'taskConfiguration'
+    fileSpec: |
+      {
+        "files": [
+          {
+            "pattern": "azdevopsshobz-generic-local/upload/*.*",
+            "target": "/home/shobhit/Downloads/azdownload/"
+          }
+        ]
+      }
+    failNoOp: true
