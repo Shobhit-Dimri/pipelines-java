@@ -46,7 +46,7 @@ steps:
         "files": [
           {
             "pattern": "azdevopsshobz-generic-local/upload/*.*",
-            "target": "/home/shobhit/Downloads/azdownload/"
+            "target": "home\\shobhit\\Downloads\\azdownload\\"
           }
         ]
       }
