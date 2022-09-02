@@ -27,6 +27,12 @@ steps:
     Contents: '**/*.jar'
     TargetFolder: '$(build.artifactstagingdirectory)'
     
+- task: PublishBuildArtifacts@1
+  inputs:
+    PathtoPublish: '$(Build.ArtifactStagingDirectory)'
+    ArtifactName: 'drop'
+    publishLocation: 'Container'
+    
 - task: ArtifactoryGenericUpload@2
   inputs:
     artifactoryService: 'JFrogArtifactory'
@@ -41,3 +47,5 @@ steps:
         ]
       }
     failNoOp: true
+    
+ 
